@@ -1,0 +1,50 @@
+[
+  {
+    "id": 1,
+    "titulo": "Interestelar",
+    "tipo": "Película",
+    "genero": "Ciencia Ficción",
+    "ano": 2014,
+    "rating": 9.1
+  },
+  {
+    "id": 2,
+    "titulo": "Stranger Things",
+    "tipo": "Serie",
+    "genero": "Fantasía",
+    "ano": 2016,
+    "rating": 8.7
+  },
+  {
+    "id": 3,
+    "titulo": "Inception",
+    "tipo": "Película",
+    "genero": "Ciencia Ficción",
+    "ano": 2010,
+    "rating": 8.8
+  },
+  {
+    "id": 4,
+    "titulo": "The Crown",
+    "tipo": "Serie",
+    "genero": "Drama",
+    "ano": 2016,
+    "rating": 8.6
+  },
+  {
+    "id": 5,
+    "titulo": "Breaking Bad",
+    "tipo": "Serie",
+    "genero": "Crimen",
+    "ano": 2008,
+    "rating": 9.5
+  },
+  {
+    "id": 6,
+    "titulo": "Parasite",
+    "tipo": "Película",
+    "genero": "Thriller",
+    "ano": 2019,
+    "rating": 9.2
+  }
+]
