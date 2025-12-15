@@ -1,0 +1,275 @@
+/*!
+ * Christmas v1.0
+ * Creado por gabiwnk
+ * Todos los derechos reservados
+ *
+ * Canal del creador:
+ * https://www.youtube.com/@Gabiwnk
+ */
+@charset "UTF-8";
+
+/* ====================== COMMON (todas las páginas) ====================== */
+body {
+  --bg-color: #0a1a1f;
+  --text-color: #f0f8ff;
+  --subtext-color: #c8e6c9;
+  --card-bg: #1a2a1a;
+  --success-color: #2e8b57;
+  --alert-color: #c62828;
+  background: linear-gradient(to bottom, #0a1a1f, #071013);
+  position: relative;
+  overflow-x: hidden;
+}
+
+/* Copos de nieve */
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 9998;
+  background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='30' height='30' viewBox='0 0 30 30'%3E%3Cpath fill='%23fff' opacity='0.4' d='M15 3v2M15 23v2M3 15h2M23 15h2M7.5 7.5l1.4 1.4M19.1 19.1l1.4 1.4M7.5 19.1l1.4-1.4M19.1 7.5l1.4-1.4' stroke='%23fff' stroke-width='1.5'/%3E%3C/svg%3E") repeat;
+  background-size: 30px 30px;
+  animation: snow 30s linear infinite;
+  opacity: 0.25;
+}
+@keyframes snow { 0% { background-position: 0 0; } 100% { background-position: 30px 100vh; } }
+
+/* Header común */
+.header {
+  background: linear-gradient(135deg, #1c2e1c, #0d3b0d);
+  border-bottom: 2px solid #c62828;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.4);
+}
+.header-title {
+  background: linear-gradient(to right, #4caf50, #ffd700);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.profile-avatar, .header-profile img {
+  border: 2px solid #ffd700;
+  box-shadow: 0 0 10px rgba(255,215,0,0.4);
+}
+.header-btn {
+  background: linear-gradient(135deg, #c62828, #d32f2f);
+  border: 1px solid #ffd700;
+}
+.header-btn:hover {
+  background: linear-gradient(135deg, #d32f2f, #ef5350);
+  box-shadow: 0 4px 12px rgba(198,40,40,0.4);
+}
+
+/* Decoración final común */
+body::after {
+  content: "❄️";
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  font-size: 2.5rem;
+  opacity: 0.4;
+  animation: float 6s infinite ease-in-out;
+  pointer-events: none;
+  z-index: 9997;
+}
+@keyframes float { 0%,100% { transform: translateY(0); } 50% { transform: translateY(-10px); } }
+
+/* ====================== INDEX.PHP ====================== */
+.welcome-message {
+  background: linear-gradient(135deg, #c62828, #4caf50);
+  border-bottom: 2px solid #ffd700;
+}
+.welcome-message::before, .welcome-message::after {
+  content: "❄️";
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+}
+.welcome-message::before { left: 15px; }
+.welcome-message::after { right: 15px; animation-direction: reverse; }
+
+.hero { border: 2px solid #ffd700; box-shadow: 0 6px 20px rgba(0,0,0,0.4); }
+.hero .overlay { background: linear-gradient(to top, rgba(12,36,12,0.9), transparent); }
+
+.section h2 { color: #ffd700; }
+.section h2::before { content: "🎁 "; }
+
+.card {
+  background: var(--card-bg);
+  border: 1px solid transparent;
+}
+.card:hover {
+  border-color: #ffd700;
+  box-shadow: 0 6px 15px rgba(255,215,0,0.2);
+  transform: translateY(-4px);
+}
+.card p { background: rgba(0,0,0,0.4); color: #e0e0e0; }
+.card::before {
+  content: "";
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, #c62828, #4caf50, #ffd700);
+  opacity: 0.7;
+}
+
+.cards::-webkit-scrollbar { height: 6px; }
+.cards::-webkit-scrollbar-track { background: rgba(255,255,255,0.05); }
+.cards::-webkit-scrollbar-thumb { background: linear-gradient(90deg, #c62828, #ffd700); border-radius: 3px; }
+
+footer {
+  background: linear-gradient(135deg, #1a2a1a, #0d3b0d);
+  border-top: 2px solid #c62828;
+  color: #ffd700;
+}
+
+.modal-content {
+  background: linear-gradient(145deg, #1a2a1a, #132013);
+  border: 2px solid #ffd700;
+}
+.modal-btn.confirm {
+  background: linear-gradient(135deg, #c62828, #d32f2f);
+  border: 1px solid #ffd700;
+}
+.modal-btn.confirm:hover { background: linear-gradient(135deg, #d32f2f, #ef5350); }
+
+/* ====================== MOVIE.PHP & SERIE.PHP ====================== */
+.image-container::after {
+  background: linear-gradient(to bottom, transparent, rgba(10,26,31,1));
+}
+img { border: 2px solid #ffd700; box-shadow: 0 6px 20px rgba(0,0,0,0.6); }
+
+h1 {
+  color: #ffd700;
+  background: linear-gradient(to right, #4caf50, #ffd700);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-shadow: 0 2px 4px rgba(0,0,0,0.5);
+}
+p { color: #c8e6c9; }
+
+.btn.play-btn {
+  background: linear-gradient(135deg, #2e8b57, #4caf50);
+  border: 2px solid #ffd700;
+}
+.btn.play-btn:hover { background: linear-gradient(135deg, #4caf50, #66bb6a); }
+
+.favorite-btn, .remove-btn {
+  background: linear-gradient(135deg, #2e8b57, #4caf50);
+  border: 1px solid #ffd700;
+}
+.favorite-btn:hover, .remove-btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 15px rgba(46,139,87,0.4);
+}
+.remove-btn { background: linear-gradient(135deg, #c62828, #d32f2f); }
+.remove-btn:hover { background: linear-gradient(135deg, #d32f2f, #ef5350); }
+
+.episodios-title { color: #ffd700; border-bottom: 2px solid #ffd700; }
+.episodio-item {
+  background: linear-gradient(145deg, #1a2a1a, #132013);
+  border: 1px solid #444;
+}
+.episodio-item:hover { border-color: #ffd700; box-shadow: 0 4px 12px rgba(255,215,0,0.2); }
+.episodio-item.visto { background: rgba(46,139,87,0.2); border-color: #ffd700; }
+.episodio-numero { background: #c62828; color: #fff; }
+.episodio-visto-toggle { color: #ffd700; }
+.episodio-item.visto .episodio-visto-toggle { color: #4caf50; }
+.episodio-btn.primary {
+  background: linear-gradient(135deg, #2e8b57, #4caf50);
+  border-color: #ffd700;
+}
+.episodio-btn.primary:hover { background: linear-gradient(135deg, #4caf50, #66bb6a); }
+
+.lista-option.selected {
+  background: linear-gradient(135deg, #2e8b57, #4caf50);
+  border-color: #ffd700;
+}
+.modal-btn.save {
+  background: linear-gradient(135deg, #2e8b57, #4caf50);
+  border: 1px solid #ffd700;
+}
+.modal-btn.save:hover { background: linear-gradient(135deg, #4caf50, #66bb6a); }
+
+.error-message { background: #c62828; border: 1px solid #ffd700; }
+.success-message { background: #2e8b57; border: 1px solid #ffd700; }
+.loading-gif { border: 3px solid #ffd700; }
+
+/* ====================== SEARCH.PHP ====================== */
+.search-container { background: #0a1a1f; }
+.search-input {
+  background: #1a2a1a;
+  border: 2px solid #444;
+  color: #f0f8ff;
+}
+.search-input:focus { border-color: #ffd700; box-shadow: 0 0 12px rgba(255,215,0,0.3); }
+
+.results-count, .no-results { color: #c8e6c9; }
+
+.result-card {
+  background: linear-gradient(145deg, #1a2a1a, #132013);
+  border: 1px solid #444;
+}
+.result-card:hover {
+  border-color: #ffd700;
+  box-shadow: 0 8px 20px rgba(255,215,0,0.2);
+  transform: translateY(-5px);
+}
+.result-card::before {
+  content: "";
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, #c62828, #4caf50, #ffd700);
+  opacity: 0.7;
+}
+.result-title { color: #f0f8ff; }
+.result-type { color: #ffd700; }
+.result-categories { color: #c8e6c9; }
+
+/* ====================== PROFILE.PHP ====================== */
+.profile-card {
+  background: linear-gradient(145deg, #1a2a1a, #132013);
+  border: 2px solid #ffd700;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.5);
+}
+.profile-img { border-color: #ffd700; box-shadow: 0 0 12px rgba(255,215,0,0.4); }
+.profile-name {
+  color: #ffd700;
+  background: linear-gradient(to right, #4caf50, #ffd700);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.stat-number { color: #ffd700; }
+
+.section-title { color: #ffd700; }
+.card-box {
+  background: linear-gradient(145deg, #1a2a1a, #132013);
+  border: 1px solid #444;
+}
+.fav-header:hover { background: #223322; }
+.media-card {
+  background: #1a2a1a;
+  border: 1px solid #444;
+}
+.media-card:hover { border-color: #ffd700; box-shadow: 0 6px 15px rgba(255,215,0,0.2); }
+.media-type { background: #c62828; }
+.btn-delete-media:hover { background: #ef5350; }
+
+.form-input {
+  background: #132013;
+  border-color: #444;
+  color: #f0f8ff;
+}
+.form-input:focus { border-color: #ffd700; }
+.avatar-option.selected { border-color: #ffd700; box-shadow: 0 0 15px rgba(255,215,0,0.5); }
+.btn-save {
+  background: linear-gradient(135deg, #2e8b57, #4caf50);
+  border: 1px solid #ffd700;
+}
+.btn-save:hover { background: linear-gradient(135deg, #4caf50, #66bb6a); }
+
+.toast.success { background: #2e8b57; border: 1px solid #ffd700; }
+.toast.error { background: #c62828; border: 1px solid #ffd700; }
